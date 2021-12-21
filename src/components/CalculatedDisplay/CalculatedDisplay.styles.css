@@ -1,0 +1,28 @@
+.truths__item {
+	font-size: 1.2rem;
+	text-transform: uppercase; 	
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 2rem;
+}
+
+.truths__item strong {	
+	margin-right: 3rem;
+}
+
+.available__income {
+	background-color: #4783a1;
+	color: #000;
+}
+
+.total__income {
+	/*background-color: #372fad;*/
+	background-color: #6e7ee6;
+}
+
+.total__expense {
+	/*background-color: rgb(227, 32, 71);*/
+	background-color: #ed5e5c;	
+}
+

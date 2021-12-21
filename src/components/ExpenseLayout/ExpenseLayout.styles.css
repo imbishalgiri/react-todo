@@ -1,0 +1,15 @@
+.expense {
+	grid-column: 5 / span 4;
+	margin: 5rem 10rem 0 5rem;
+}
+
+.expense__heading {
+	font-size: 2rem;
+	color: rgb(227, 32, 71);
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+}
+
+.expense__parent {
+	list-style: none;
+}

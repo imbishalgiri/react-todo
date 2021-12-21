@@ -1,0 +1,52 @@
+.expense__item {
+	font-size: 1.4rem;
+	padding: 1rem;
+	border-top: 2px solid #e7e7e7;
+	display: flex;
+	align-items: center;
+}
+
+.expense__item:nth-child(even) {
+	background-color: rgba(250, 5, 54, .1);
+}
+
+.expense__item:last-child {
+	border-bottom: 2px solid #e7e7e7;
+}
+
+.expense__amount {
+	margin-left: auto;
+}
+
+.expense__icons {
+	color: rgb(227, 32, 71);
+	transition: all .3s;
+	margin-left: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.expense__icons .icon {
+	opacity: 0;
+}
+
+.expense__icons > * {
+	margin: 0 .5rem;
+	cursor: pointer;
+	perspective: 500px;
+	transition: all .2s;
+}
+
+.expense__icons > *:hover {
+	color: #5e0019;
+}
+
+.expense__item:hover .expense__icons {
+	transform: translateX(-.8rem);
+}
+
+.expense__item:hover .expense__icons .icon {
+	transform: translateX(-.8rem);
+	opacity: 1;
+}

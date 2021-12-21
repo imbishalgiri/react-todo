@@ -1,0 +1,25 @@
+.description {
+	width: 30rem;
+	display: flex;
+	justify-content: center;
+}
+
+.description__text {
+	width: 100%;
+	height: 4rem;
+	padding: 1rem;
+	font-size: 1.6rem;
+	font-weight: bold;
+	font-style: italic;
+	letter-spacing: .1rem;
+	box-shadow: inset 0 -2px #ccc;
+	border: none;
+	border-radius: .5rem;
+	transition: all .2s;
+}
+
+.description__text:focus {
+	box-shadow: none;
+	outline: none;
+	border: 1px solid blue;
+}

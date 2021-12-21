@@ -1,0 +1,19 @@
+.percentage__item-expense {
+	background-color: rgba(235, 35, 65, .3);
+	width: 3.5rem;
+	text-align: center;
+	padding: .3rem;
+	font-size: 1rem;
+	border-radius: .3rem;
+	margin: 0 3rem 0 1rem;
+}
+
+.percentage__item-expensetop {
+	background-color: rgba(255, 255, 255, .3);
+	width: 3.5rem;
+	text-align: center;
+	padding: .3rem;
+	font-size: 1rem;
+	border-radius: .3rem;
+	margin: 0 1rem 0 1rem;
+}

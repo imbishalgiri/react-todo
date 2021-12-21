@@ -1,0 +1,16 @@
+.income {
+	grid-column: 1 / span 4;
+	margin: 5rem 5rem 0 10rem;
+	/*border: 1px solid #000;*/
+}
+
+.income__heading {
+	font-size: 2rem;
+	color: #372fad;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+}
+
+.income__parent {
+	list-style: none;
+}
