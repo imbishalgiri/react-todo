@@ -1,39 +1,39 @@
-import React,{Component} from 'react';
+import React, { Component } from "react";
+import BudgetContext from "../../context/BudgetContext";
 
-import './CategoryToggle.styles.css';
+import "./CategoryToggle.styles.css";
 
 class CategoryToggle extends Component {
+  static contextType = BudgetContext;
 
-    constructor(props){
-        super(props);
-        this.state = {isIncome: true};
-    }
+  incomeDisplay = () => (
+    <div className="category">
+      <div className="category__item">Income</div>
+      <div
+        className="category__icon icon icon-circle-up"
+        onClick={() => this.context.setType("expenses")}
+      ></div>
+    </div>
+  );
 
-    incomeDisplay = () => (
-        <div className="category">
-            <div className="category__item">Income</div>
-            <div className="category__icon icon icon-circle-up" onClick={this.handleClick}></div>
-        </div>
-    )
+  expenseDisplay = () => (
+    <div className="category">
+      <div className="category__item--expense">Expense</div>
+      <div
+        className="category__icon--expense icon icon-circle-up"
+        onClick={() => this.context.setType("incomes")}
+      ></div>
+    </div>
+  );
 
-    expenseDisplay = () => (
-        <div className="category">
-            <div className="category__item--expense">Expense</div>
-            <div className="category__icon--expense icon icon-circle-up" onClick={this.handleClick}></div>
-        </div>
-    )
+  render() {
+    console.log(this.context.incomes);
+    console.log(this.context.expenses);
+    const income = this.incomeDisplay();
+    const expense = this.expenseDisplay();
 
-    handleClick = () => {
-        this.setState({isIncome: !this.state.isIncome});
-        this.props.setCategory(!this.state.isIncome); // because of the asynchronous behavior of this.setState above this line
-    }
-
-    render() {
-        const income = this.incomeDisplay();
-        const expense = this.expenseDisplay();
-
-        return this.state.isIncome ? income : expense;
-    }
+    return this.context.type === "incomes" ? income : expense;
+  }
 }
 
 export default CategoryToggle;

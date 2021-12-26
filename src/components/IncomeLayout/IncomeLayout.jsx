@@ -1,20 +1,33 @@
-import React from 'react';
+import React, { Component } from "react";
 
-import IncomeItem from '../IncomeItem/IncomeItem';
+import IncomeItem from "../IncomeItem/IncomeItem";
+import BudgetContext from "../../context/BudgetContext";
 
-import './IncomeLayout.styles.css';
+import "./IncomeLayout.styles.css";
 
-const IncomeLayout = () => {
-    
-    return(
-        <div className="income">
-            <h3 className="income__heading">Incomes</h3>
-            <ul className="income__parent">
-                <IncomeItem description="I am income amount" amount={1234334} />
-                <IncomeItem description="I am income amount" amount={1234334} />
-            </ul>
-        </div>
-    )
+class IncomeLayout extends Component {
+  static contextType = BudgetContext;
+
+  incomeItems = () =>
+    this.context.incomes.map(({ description, amount, id }) => {
+      return (
+        <IncomeItem
+          description={description}
+          amount={amount}
+          key={id}
+          id={id}
+        />
+      );
+    });
+
+  render() {
+    return (
+      <div className="income">
+        <h3 className="income__heading">Incomes</h3>
+        <ul className="income__parent">{this.incomeItems()}</ul>
+      </div>
+    );
+  }
 }
 
 export default IncomeLayout;

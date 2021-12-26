@@ -1,31 +1,28 @@
-import React,{Component} from 'react';
+import React, { Component } from "react";
+import BudgetContext from "../../context/BudgetContext";
 
-import './description.styles.css';
+import "./description.styles.css";
 
 class Description extends Component {
+  static contextType = BudgetContext;
 
-    constructor(props) {
-        super(props);
-        this.state = {text: ""};
-    }
+  handleChange = (event) => {
+    this.context.setDescription(event.target.value);
+  };
 
-    handleChange = (event) => {
-        this.setState({text: event.target.value});
-    }
-
-    render() {
-        return(
-            <div className="description">
-                <input 
-                    className="description__text" 
-                    value={this.state.text}
-                    type="text" 
-                    placeholder="description" 
-                    onChange={this.handleChange}
-                />
-			</div>
-        )
-    }
+  render() {
+    return (
+      <div className="description">
+        <input
+          className="description__text"
+          value={this.context.description}
+          type="text"
+          placeholder="description"
+          onChange={this.handleChange}
+        />
+      </div>
+    );
+  }
 }
 
 export default Description;

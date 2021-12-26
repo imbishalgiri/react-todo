@@ -1,35 +1,47 @@
-import React,{Component} from 'react';
-
-import './amount.styles.css';
+import React, { Component } from "react";
+import BudgetContext from "../../context/BudgetContext";
+import "./amount.styles.css";
 
 class Amount extends Component {
+  static contextType = BudgetContext;
 
-    constructor(props) {
-        super(props);
-        this.state = {val: ""};
+  handleChange = (event) => {
+    if (isNaN(event.target.value)) {
+      return;
     }
+    this.context.setAmount(event.target.value);
+  };
 
-    handleChange = (event) => {
-        if(isNaN(event.target.value)) {
-            return;
-        }
-        this.setState({val: event.target.value});
+  handleClick = () => {
+    this.context.addValue();
+    this.context.clearPage();
+  };
+
+  handleEnter = (event) => {
+    if (event.key === "Enter") {
+      this.context.addValue();
+      this.context.clearPage();
     }
-    
-    render() {
-        return (
-            <div className="amount">
-                <input 
-                    type="text" 
-                    className="amount__money" 
-                    placeholder="amount"
-                    onChange={this.handleChange}
-                    value={this.state.val}
-                 />
-				<span className="amount__icon icon icon-checkmark"></span>
-			</div>
-        )
-    }
+  };
+
+  render() {
+    return (
+      <div className="amount">
+        <input
+          type="text"
+          className="amount__money"
+          placeholder="amount"
+          onChange={this.handleChange}
+          value={this.context.amount}
+          onKeyDown={this.handleEnter}
+        />
+        <span
+          className="amount__icon icon icon-checkmark"
+          onClick={this.handleClick}
+        ></span>
+      </div>
+    );
+  }
 }
 
 export default Amount;

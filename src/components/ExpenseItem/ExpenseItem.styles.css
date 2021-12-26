@@ -1,52 +1,64 @@
 .expense__item {
-	font-size: 1.4rem;
-	padding: 1rem;
-	border-top: 2px solid #e7e7e7;
-	display: flex;
-	align-items: center;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border-top: 2px solid #e7e7e7;
+  display: flex;
+  align-items: center;
 }
 
 .expense__item:nth-child(even) {
-	background-color: rgba(250, 5, 54, .1);
+  background-color: rgba(250, 5, 54, 0.1);
 }
 
 .expense__item:last-child {
-	border-bottom: 2px solid #e7e7e7;
+  border-bottom: 2px solid #e7e7e7;
 }
 
 .expense__amount {
-	margin-left: auto;
+  margin-left: auto;
 }
 
 .expense__icons {
-	color: rgb(227, 32, 71);
-	transition: all .3s;
-	margin-left: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  color: rgb(227, 32, 71);
+  transition: all 0.3s;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .expense__icons .icon {
-	opacity: 0;
+  opacity: 0;
 }
 
 .expense__icons > * {
-	margin: 0 .5rem;
-	cursor: pointer;
-	perspective: 500px;
-	transition: all .2s;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  perspective: 500px;
+  transition: all 0.2s;
 }
 
 .expense__icons > *:hover {
-	color: #5e0019;
+  color: #5e0019;
 }
 
 .expense__item:hover .expense__icons {
-	transform: translateX(-.8rem);
+  transform: translateX(-0.8rem);
 }
 
 .expense__item:hover .expense__icons .icon {
-	transform: translateX(-.8rem);
-	opacity: 1;
+  transform: translateX(-0.8rem);
+  opacity: 1;
+}
+
+.update__button {
+  background: rgb(227, 32, 71);
+  width: 8rem;
+  height: 3rem;
+  color: #fff;
+  padding: 0.3rem;
+  margin-left: 3rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }

@@ -1,8 +1,8 @@
-import React from 'react';
-import './pencil.styles.css';
+import React from "react";
+import "./pencil.styles.css";
 
-const Pencil = () => (
-    <div className="list_icons icon icon-pencil"></div>
-)
+const Pencil = ({ onClick }) => (
+  <div className="list_icons icon icon-pencil" onClick={onClick}></div>
+);
 
 export default Pencil;
