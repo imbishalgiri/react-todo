@@ -73,6 +73,16 @@ export class BudgetStore extends Component {
     this.setState({ expenses });
   };
 
+  deleteItem = (id, type) => {
+    const deleteables = [...this.state[type]];
+    let itemToBeDeleted = deleteables.find((item) => item.id === id);
+    const newItems = deleteables.filter(
+      (income) => income.id !== itemToBeDeleted.id
+    );
+    console.log("triggered");
+    this.setState({ [type]: newItems });
+  };
+
   render() {
     return (
       <Context.Provider
@@ -85,6 +95,7 @@ export class BudgetStore extends Component {
           clearPage: this.clearPage,
           updateIncome: this.updateIncome,
           updateExpense: this.updateExpense,
+          deleteItem: this.deleteItem,
         }}
       >
         {this.props.children}

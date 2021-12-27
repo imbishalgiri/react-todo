@@ -55,7 +55,7 @@ const ExpenseItem = ({ id, description, amount }) => {
           providedValue={percentage}
         />
         <Pencil onClick={() => setIsEditing(true)} />
-        <Trash itemId={id} />
+        <Trash onClick={() => context.deleteItem(id, "expenses")} />
       </div>
     </li>
   );

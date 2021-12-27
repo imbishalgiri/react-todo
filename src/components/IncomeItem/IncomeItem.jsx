@@ -45,7 +45,7 @@ const IncomeItem = ({ description, amount, id }) => {
       <div className="income__icons">
         <span className="income__amount">{amount}</span>
         <Pencil onClick={() => setIsEditing(true)} />
-        <Trash />
+        <Trash onClick={() => context.deleteItem(id, "incomes")} />
       </div>
     </li>
   );
